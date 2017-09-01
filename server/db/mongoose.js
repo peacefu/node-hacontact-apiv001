@@ -11,6 +11,7 @@ mongoose.Promise = global.Promise;
 
 // mongoose.connect(process.env.MONGOLAB_MAUVE_URI||'mongodb://localhost:27017/TodoApp');
 //mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/TodoApp');
-mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/HaContactApp');
+// mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/HaContactApp');
+mongoose.connect(process.env.MONGOLAB_RED_URI||'mongodb://localhost:27017/HaContactApp');
 
 module.exports = {mongoose};
