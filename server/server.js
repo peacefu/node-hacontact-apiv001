@@ -10,21 +10,35 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-// app.post('/todos',(req, res) => {
-//   // console.log(req.body);
-//   var todo = new Todo({
-//     text: req.body.text
-//   });
+app.post('/contacts',(req, res) => {
+  // console.log(req.body);
+  var contact = new Contact({
 
-//   todo.save().then((doc) => {
-//     res.send(doc);
-//   }, (e) => {
-//     res.status(400).send(e);
-//   });
-// });
+    // firstname: req.body.firstname,
+    // surname: req.body.surname,
+    // postTitle: req.body.postTitle,
+    // extNo: req.body.extNo,
+    // teamNo: req.body.teamNo,
+    // sectionNo: req.body.sectionNo,
+    // status: req.body.status
+    firstname: 'Alex',
+    surname: 'Tse',
+    postTitle: 'SAT/16',
+    extNo: '7289',
+    teamNo: '23',
+    sectionNo: '2',
+    status: 'Current'
+  });
+
+  contact.save().then((doc) => {
+    res.send(doc);
+  }, (e) => {
+    res.status(400).send(e);
+  });
+});
 
 app.get('/contacts', (req, res) => {
-  Todo.find().then((contacts) => {
+  Contact.find().then((contacts) => {
     res.send({contacts});
   }, (e) => {
     res.status(400).send(e);
