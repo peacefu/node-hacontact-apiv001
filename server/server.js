@@ -5,8 +5,12 @@ var {ObjectID} = require('mongodb');
 var {mongoose} = require('./db/mongoose');
 var {Contact} = require('./models/contact');
 
+var cors = require('cors');
+
 var app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors({origin: '*'}));
 
 app.use(bodyParser.json());
 
