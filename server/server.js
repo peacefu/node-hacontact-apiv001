@@ -12,6 +12,8 @@ const fs = require('fs');
 var app = express();
 const port = process.env.PORT || 3000;
 
+var appRoot = process.cwd();
+
 //app.use(cors({origin: '*'}));
 app.use(cors());
 
@@ -20,7 +22,7 @@ app.use(bodyParser.json());
 app.post('/contacts',(req, res) => {
   // console.log(req.body);
 
-  var contactString = fs.readFileSync('server/contacts.json');
+  var contactString = fs.readFileSync(appRoot + '/server/contacts.json');
 
   var contactObject = JSON.parse(contactString);
   console.log(typeof contactObject);
