@@ -1,34 +1,45 @@
-// eng_name: string,
-//   post: string,
-//     phone_no: string,
-//       team_no: string,
-//         section_no: string,
-//           firstname: string,
-//             surname: string,
-//               last_update_date: string
-
 var mongoose = require('mongoose');
 
+// last_name: LastName,
+//   given_name: GivenName,
+//     middle_name: MiddleName,
+//       post: Post,
+//         division: Division,
+//           subdivision: Subdivision,
+//             section: Section,
+//               mail: Mail,
+//                 title: Title,
+//                   phone: Phone 
+
 var Contact = mongoose.model('Contact', {
-  eng_name: {
+  last_name: {
+    type: String
+  },
+  given_name: {
+    type: String
+  },
+  middle_name: {
     type: String
   },
   post: {
     type: String
   },
-  phone_no: {
+  division: {
     type: String
   },
-  team_no: {
+  subdivision: {
     type: String
   },
-  section_no: {
+  section: {
     type: String
   },
-  firstname: {
+  mail: {
     type: String
   },
-  surname: {
+  title: {
+    type: String
+  },
+  phone: {
     type: String
   },
   last_update_date: {
