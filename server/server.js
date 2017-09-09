@@ -13,13 +13,14 @@ var app = express();
 const port = process.env.PORT || 3000;
 
 var appRoot = process.cwd();
+console.log(appRoot + '/server/contacts.json');
 
 //app.use(cors({origin: '*'}));
 app.use(cors());
 
 app.use(bodyParser.json());
 
-app.post('/contacts',(req, res) => {
+app.post('/putcontacts',(req, res) => {
   // console.log(req.body);
 
   var contactString = fs.readFileSync(appRoot + '/server/contacts.json');
