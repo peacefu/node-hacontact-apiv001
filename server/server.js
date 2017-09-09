@@ -20,7 +20,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.post('/putcontacts',(req, res) => {
+app.post('/contacts',(req, res) => {
   // console.log(req.body);
 
   var contactString = fs.readFileSync(appRoot + '/server/contacts.json');
